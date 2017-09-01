@@ -1,0 +1,3 @@
+C:\Users\james\PycharmProjects\naivebayes\obj\Release\naivebayes.pyproj.CoreCompileInputs.cache
+C:\Users\james\PycharmProjects\naivebayes\bin\Microsoft.PythonTools.WebRole.dll
+C:\Users\james\PycharmProjects\naivebayes\bin\wfastcgi.py

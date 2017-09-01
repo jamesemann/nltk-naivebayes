@@ -2,6 +2,9 @@ import nltk
 import pickle
 import os.path
 
+from os import environ
+from flask import Flask
+
 with open('intent-turnofflight.txt', 'r') as f:
     intentTurnoffLightSamples = f.readlines()
 
@@ -45,15 +48,32 @@ def load():
     fileRead.close()
     return classifier
 
-instance = load()
 
-print(classify(instance, 'switch the light off'))
-print(classify(instance, 'turn it off'))
-print(classify(instance, 'please turn off the light'))
-print(classify(instance, 'turn it on'))
-print(classify(instance, 'light on'))
-print(classify(instance,'please would you turn on the light'))
+#print(classify(instance, 'switch the light off'))
+#print(classify(instance, 'turn it off'))
+#print(classify(instance, 'please turn off the light'))
+#print(classify(instance, 'turn it on'))
+#print(classify(instance, 'light on'))
+#print(classify(instance,'please would you turn on the light'))
 
 #print (extract_features('hi there'))
 
 
+app = Flask(__name__)
+
+@app.route('/intent')
+def hello_world():
+	instance = load()
+	return classify(instance, 'switch the light off')
+
+#if __name__ == '__main__':
+#  app.run()
+
+
+if __name__ == '__main__':
+    HOST = environ.get('SERVER_HOST', 'localhost')
+    try:
+        PORT = int(environ.get('SERVER_PORT', '5555'))
+    except ValueError:
+        PORT = 5555
+    app.run(HOST, PORT)
