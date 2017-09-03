@@ -1,10 +1,8 @@
 import nltk
 import pickle
 import os.path
-
-from os import environ
-from flask import Flask
-from flask import request
+import os
+import flask
 
 def getSamples(file):
     with open(file, 'r') as f:
@@ -46,18 +44,18 @@ def load():
     fileRead.close()
     return classifier
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 @app.route('/intent')
 def intent():
-	utterance = request.args.get('utterance')
+	utterance = flask.request.args.get('utterance')
 	instance = load()
-	return classify(instance, utterance)
+	return flask.jsonify(intent=classify(instance, utterance))
 
 if __name__ == '__main__':
-    HOST = environ.get('SERVER_HOST', 'localhost')
+    HOST = os.environ.get('SERVER_HOST', 'localhost')
     try:
-        PORT = int(environ.get('SERVER_PORT', '5555'))
+        PORT = int(os.environ.get('SERVER_PORT', '5555'))
     except ValueError:
         PORT = 5555
     app.run(HOST, PORT)

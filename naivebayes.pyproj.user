@@ -2,12 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <UseIISExpress>true</UseIISExpress>
-    <NameOfLastUsedPublishProfile>nltk - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>pythondemosep1 - Web Deploy</NameOfLastUsedPublishProfile>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>
