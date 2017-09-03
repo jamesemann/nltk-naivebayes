@@ -1,0 +1,3 @@
+C:\youtube\nltk-naivebayes\obj\Debug\naivebayes.pyproj.CoreCompileInputs.cache
+C:\youtube\nltk-naivebayes\bin\Microsoft.PythonTools.WebRole.dll
+C:\youtube\nltk-naivebayes\bin\wfastcgi.py
